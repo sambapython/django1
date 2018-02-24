@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<script type="text/javascript">
+		/* alert */
+		function fun(){
+			alert("HELLO JS");
+		}
+		function add(){
+			
+			var first = document.getElementById("a").value;
+		
+			var second = document.getElementById("b").value;
+			alert(parseInt(first)+parseInt(second));
+		}
+		function sub(){
+			var first = document.getElementById("a").value;
+		
+			var second = document.getElementById("b").value;
+			alert(parseInt(first)-parseInt(second));
+		}
+		function mul(){
+			var first = document.getElementById("a").value;
+		
+			var second = document.getElementById("b").value;
+			alert(parseInt(first)*parseInt(second));
+		}
+		function changecolor(){
+			var color = document.getElementById("color").value;
+			var title = document.getElementById("title")
+			title.style.color=color
+		}
+		/* fun()*/
+		
+	</script>
+</head>
+<body>
+	add color=<input type="text" name="" id="color">
+	<button id="colorbutton" onclick="changecolor()"> change color</button>
+	<h1 id="title"> This is an APP file</h1>
+	<!-- <h1 onclick="fun()"> This is an APP file</h1> -->
+	a=<input type="text" name="" id="a">
+	b=<input type="text" name="" id="b">
+
+	<button onclick="add()">Add</button>
+	<button onclick="sub()">Sub</button>
+	<button onclick="mul()">MUL</button>
+
+</body>
+</html>

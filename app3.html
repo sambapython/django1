@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<!--
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+-->
+<script type="text/javascript" src="jq.js"></script>
+<script type="text/javascript">
+	$(document).ready(function(){
+
+		var l=[10,20,30,40];
+		var d={"name":"anil","age":23}
+		$.each(d,function(i,v){
+			alert(i);
+
+		});
+    
+		/* alert("THIS INSIDE READY CALL")*/
+		$("#add").click(function(){
+			/* alert($("#a").val()) */
+			var first=parseInt($("#a").val())
+			var second=parseInt($("#b").val())
+			alert(first+second)
+		});
+		$("#sub").click(function(){
+			/* alert($("#a").val()) */
+			var first=parseInt($("#a").val())
+			var second=parseInt($("#b").val())
+			alert(first-second)
+		});
+		$("#mul").click(function(){
+			/* alert($("#a").val()) */
+			var first=parseInt($("#a").val())
+			var second=parseInt($("#b").val())
+			alert(first*second)
+		});
+		$("#color").blur(function(){
+			$("#title").css({"color":$(this).val()})
+		})
+
+
+});
+</script>
+
+	
+</head>
+<body>
+	add color=<input type="text" name="" id="color">
+	<h1 id="title"> This is an APP file</h1>
+	<!-- <h1 onclick="fun()"> This is an APP file</h1> -->
+	a=<input type="text" name="" id="a">
+	b=<input type="text" name="" id="b">
+
+	<button id="add">Add</button>
+	<button id="sub">Sub</button>
+	<button id="mul">MUL</button>
+
+</body>
+<!--
+<script type="text/javascript">
+	alert("HELLO")
+
+</script>
+-->
+</html>
