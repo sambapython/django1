@@ -15,10 +15,17 @@ Including another URLconf
 """
 from django.conf.urls import url
 from django.contrib import admin
-from app1.views import create_instructor
+from app1.views import create_instructor, index, update_instructor,\
+delete_instructor,instructor
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
-    url(r'^instructor/', create_instructor),
+    url(r'^create_instructor/', create_instructor),
+    url(r'^$', index),
+    url(r'^update_instructor/([0-9]+)/', update_instructor),
+    url(r'^delete_instructor/([0-9]+)/', delete_instructor),
+    url(r'^instructor/$', instructor),
+
+
 
 ]

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>LIST INSTRUCOR</title>
+</head>
+<body>
+	<h6>{{ msg }}</h6>
+	<h2> LIST OF INSTRUCTORS</h2>
+	<a href="/create_instructor/">ADD instructor</a>
+	<table border="1">
+		<tr>
+			<th>Name</th>
+			<th>Email Address</th>
+			<th>Mobile Number</th>
+			<th>Extra information</th>
+		</tr>
+	
+	{% for row in data%}
+		<tr>
+
+			<td>{{ row.name }}</td>
+			<td>{{ row.email }}</td>
+			<td>{{ row.mobile }}</td>
+			<td>{{ row.info }}</td>
+			<td><a href="">Update</a></td>
+			<td><a href="">DELETE</a></td>
+		</tr>
+	{% endfor %}
+	</table>
+</body>
+</html>

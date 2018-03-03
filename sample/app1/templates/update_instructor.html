@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+	<h1>update instructor</h1>
+	<h2> {{ msg }}</h2>
+	<!---
+	<form method="post">
+		{% csrf_token %}
+		Name: <input type="text" name="name" value="sdfsd"><br>
+		email: <input type="email" name="email" value="email1@gmail.com"><br>
+		phone:<input type="text" name="cell" value="234567"><br>
+		info:<input type="textarea" name="extratext" value="sdgfsdfsdf"><br>
+		<input type="submit" name="" value="update instructor">
+	</form>
+
+
+<form method="post">
+		{% csrf_token %}
+		Name: <input type="text" name="name" value="inst_data.name"><br>
+		email: <input type="email" name="email" value="inst_data.email"><br>
+		phone:<input type="text" name="cell" value="inst_data.mobile"><br>
+		info:<input type="textarea" name="extratext" value="inst_data.info"><br>
+		<input type="submit" name="" value="update instructor">
+	</form>
+	-->
+	<form method="post">
+		{% csrf_token %}
+		Name: <input type="text" name="name" value="{{ inst_data.name }}"><br>
+		email: <input type="email" name="email" value="{{ inst_data.email }}"><br>
+		phone:<input type="text" name="cell" value="{{ inst_data.mobile }}"><br>
+		info:<input type="textarea" name="extratext" value="{{ inst_data.info }}"><br>
+		<input type="submit" name="" value="update instructor">
+	</form>
+</body>
+</html>
