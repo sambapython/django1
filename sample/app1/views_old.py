@@ -4,13 +4,8 @@ from __future__ import unicode_literals
 from django.shortcuts import render, redirect
 from models import Instructor
 def instructor(request):
-	#import pdb; pdb.set_trace()
-	single_instructor = request.GET.get("name")
-	if single_instructor:
-		data = Instructor.objects.filter(name=single_instructor)
-	else:
-		data = Instructor.objects.all()
-	return render(request,"app1/list_instructor.html",{"data":data})
+	data = Instructor.objects.all()
+	return render(request,"list_instructor.html",{"data":data})
 def delete_instructor(request, i_id):
 	msg=""
 	data=""
@@ -23,13 +18,13 @@ def delete_instructor(request, i_id):
 		if flag=="yes":
 			data.delete()
 			msg="deleted successfully"
-			return redirect("/instructor/")
+			data=""
 		else:
 			msg="Changed your mind"
-	return render(request,"app1/delete_instructor.html",{"inst_data":data,"msg":msg})
+	return render(request,"delete_instructor.html",{"inst_data":data,"msg":msg})
 
 def index(request):
-	return render(request,"app1/index.html")
+	return render(request,"index.html")
 def update_instructor(request, instructor_pk):
 	msg=""
 	if request.method=="POST":
@@ -41,7 +36,6 @@ def update_instructor(request, instructor_pk):
 			inst.info=request.POST.get("extratext")
 			inst.save()
 			msg="record %s updated successfully" %instructor_pk
-			return redirect("/instructor/")
 		except Exception as err:
 			msg=err.message
 
@@ -53,7 +47,7 @@ def update_instructor(request, instructor_pk):
 	except Exception as err:
 		msg=err.message
 	#print data.name
-	return render(request,"app1/update_instructor.html",{"inst_data":data,"msg":msg})
+	return render(request,"update_instructor.html",{"inst_data":data,"msg":msg})
 
 # Create your views here.
 def create_instructor(request):
@@ -73,8 +67,6 @@ def create_instructor(request):
 		return redirect("/instructor/")
 	else:
 
-		return render(request,"app1/create_instructor.html")
-def course(request):
-	pass
+		return render(request,"create_instructor.html")
 
 

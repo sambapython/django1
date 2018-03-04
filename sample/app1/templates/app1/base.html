@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>
+	{% block title%}
+		TODO LIST
+	{%endblock%}
+
+	</title>
+</head>
+<body>
+	{% block header%}
+		{% load static %}
+		<a href="/"><img src="{% static 'app1/images/logo.png' %}" alt="IMAGE NOT FOUND"
+		width=150 height=150></a>
+		<h1>KHYAATHI TECHNOLOGIES</h1>
+		<h6>{{ msg }}</h6>
+	{% endblock %}
+	{% block body%}
+		<h1> BASIC TEXT</h1>
+	{% endblock%}
+	{% block footer%}
+		<P> Maithrivanam, besides kruthungs restaurant</P>
+	{% endblock %}
+
+</body>
+</html>

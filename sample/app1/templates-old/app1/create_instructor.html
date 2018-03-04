@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+	{% load static %}
+	<img src="{% static 'app1/images/logo.png' %}" alt="IMAGE NOT FOUND"
+	width=150 height=150>
+	<h1>KHYAATHI INSTITUTE</h1>
+	<h1>create instructor</h1>
+	<h2> {{ message }}</h2>
+	<form method="post">
+		{% csrf_token %}
+		Name: <input type="text" name="name"><br>
+		email: <input type="email" name="email"><br>
+		phone:<input type="text" name="cell"><br>
+		info:<input type="textarea" name="extratext"><br>
+		<input type="submit" name="" value="create instructor">
+	</form>
+</body>
+</html>

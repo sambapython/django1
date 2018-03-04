@@ -1,9 +1,8 @@
-<!DOCTYPE html>
-<html>
-<head>
-	<title></title>
-</head>
-<body>
+{% extends 'app1/base.html'%}
+{% block title%}
+		create instructor
+{% endblock%}
+{%block body%}
 	<h1>create instructor</h1>
 	<h2> {{ message }}</h2>
 	<form method="post">
@@ -14,5 +13,4 @@
 		info:<input type="textarea" name="extratext"><br>
 		<input type="submit" name="" value="create instructor">
 	</form>
-</body>
-</html>
+{% endblock %}

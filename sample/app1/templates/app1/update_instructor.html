@@ -1,0 +1,14 @@
+{% extends 'app1/base.html'%}
+{% block title%}
+		update instructor
+{% endblock%}
+{% block body%}
+	<form method="post">
+		{% csrf_token %}
+		Name: <input type="text" name="name" value="{{ inst_data.name }}"><br>
+		email: <input type="email" name="email" value="{{ inst_data.email }}"><br>
+		phone:<input type="text" name="cell" value="{{ inst_data.mobile }}"><br>
+		info:<input type="textarea" name="extratext" value="{{ inst_data.info }}"><br>
+		<input type="submit" name="" value="update instructor">
+	</form>
+{%endblock%}

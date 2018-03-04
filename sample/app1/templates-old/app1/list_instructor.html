@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>LIST INSTRUCOR</title>
+</head>
+<body>
+	{% load static %}
+		<img src="{% static 'app1/images/logo.png' %}" alt="IMAGE NOT FOUND"
+		width=150 height=150>
+		<h1>KHYAATHI INSTITUTE</h1>
+		<h6>{{ msg }}</h6>
+	
+	<h4> LIST OF INSTRUCTORS</h4>
+	<a href="/create_instructor/">ADD instructor</a><br>
+	<form>
+		Name: <input type="text" name="name" help="Enter name to search">
+		<input type="submit" value="search instructor" >
+	</form>
+	<table border="1">
+		<tr>
+			<th>Name</th>
+			<th>Email Address</th>
+			<th>Mobile Number</th>
+			<th>Extra information</th>
+		</tr>
+	
+	{% for row in data%}
+		<tr>
+
+			<td>{{ row.name }}</td>
+			<td>{{ row.email }}</td>
+			<td>{{ row.mobile }}</td>
+			<td>{{ row.info }}</td>
+			<td><a href="/update_instructor/{{row.id}}/">Update</a></td>
+			<td><a href="/delete_instructor/{{row.id}}">Delete</a></td>
+		</tr>
+	{% endfor %}
+	</table>
+</body>
+</html>
