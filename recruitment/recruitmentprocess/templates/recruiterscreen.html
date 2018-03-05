@@ -1,0 +1,42 @@
+{% extends 'base.html'%}
+{%block content%}
+    <table class="table table-dark table-bordered">
+    	<thead>
+	      <tr>
+	        <th>name</th>
+	        <!-- <th>company</th> -->
+	       <!--  <th>createdby</th> -->
+	        <th>createddate</th>
+	        <th>status</th>
+	        <th>jobs</th>
+	        <th># of applications</th>
+	        <th>Update the recruitment</th>
+	      </tr>
+	    </thead>
+    	<tbody>
+    		{% for row in data%}
+	    		<tr>
+	    			<th>{{row.name}}</th>
+			        <!-- <th>{{row.company}}</th> -->
+			        <!-- <th>{{row.createdby}}</th> -->
+			        <th>{{row.createddate}}</th>
+			        <th>{{row.status}}</th>
+
+			        <th>{{row.jobs}}</th>
+			        <th>{{ row.count }}</th>
+			        <th>
+			        	{% ifequal row.status 'draft'%}
+			        	 <a href="/changedrive/{{ row.id}}/">Start</a>
+			        	{% endif %}
+			        	{% ifequal row.status 'inprogress'%}
+			        	 <a href="/changedrive/{{ row.id}}/">Complete</a>
+			        	{% endif %}
+			        </th>
+			        
+	    		</tr>
+	    	{% endfor %}
+    	</tbody>
+    	
+    </table>
+    
+{% endblock%}

@@ -1,0 +1,38 @@
+{% extends 'base.html'%}
+{% block content%}
+<h1> Showing all the jobs</h1>
+<table class="table table-dark table-bordered">
+    	<thead>
+	      <tr>
+	        <th>name</th>
+	        <!-- <th>company</th> -->
+	       <!--  <th>createdby</th> -->
+	        <th>createddate</th>
+	        <th>status</th>
+	        <th>Update the recruitment</th>
+	      </tr>
+	    </thead>
+    	<tbody>
+    		{% for row in data%}
+	    		<tr>
+	    			<td>{{row.name}}</td>
+			        <!-- <td>{{row.company}}</td> -->
+			        <!-- <td>{{row.createdby}}</td> -->
+			        <td>{{row.createddate}}</td>
+			        <td>{{row.status}}</td>
+			        {% if row.applied%}
+			        	<td>APPLIED</td>
+			        {% else %}
+			            <td>
+			            		<a href="/job_apply/{{ row.id }}">Apply</a>	
+			        	</td>
+			        {% endif %}
+	    		</tr>
+	    	{% endfor %}
+    	</tbody>
+    	
+    </table>
+{% for row in data%}
+
+{% endfor%}
+{% endblock %}
