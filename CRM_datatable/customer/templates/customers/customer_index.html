@@ -1,0 +1,46 @@
+{% extends 'customers/base.html'%}
+
+{%block pageheader%}
+	customers
+{%endblock%}
+{% block content %}
+	<div class="row">
+		<div class="col-lg-3">
+			<a href="create/"> Create customer</a>
+		</div>
+	</div>
+	<div class="row">
+		<table id="table">
+    <thead>
+      <tr>
+        {% for row in columns%}
+          <th>{{ row }}</th>
+        {% endfor%}
+        <th>Update</th>
+        <th> delete</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for customer in data%}
+      	<tr class="info">
+          {% for key, value in customer.items%}
+            <td> {{ value }}</td>
+          {% endfor%}
+          <td><a href="update/{{ customer.id }}">UPDATE</a></td>
+          <td><a href="delete/{{ customer.id }}">DELETE</a></td>
+      	</tr>
+          
+      {% endfor %}
+    </tbody>
+    <tfoot>
+            <tr>
+                {% for row in columns%}
+                  <th>{{ row }}</th>
+                {% endfor%}
+                <th>Update</th>
+                <th> delete</th>
+            </tr>
+        </tfoot>
+  </table>
+	</div>
+ {% endblock %}
