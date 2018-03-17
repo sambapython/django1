@@ -1,0 +1,59 @@
+{% extends 'base.html'%}
+{% block js%}
+<script type="text/javascript">
+	$(document).ready(function() {
+    $('#product').DataTable();
+    $('#page').val="{{ page_number}}"
+} );
+</script>
+  {% endblock%}
+{%block pageheader%}
+LIST OF PRODUCTS
+	 {% endblock %}	
+	  
+
+{% block content %}
+<form method="post">
+		{% csrf_token %}
+		  <div class="form-group">
+		    <label for="pwd">pages:</label>
+		    <select name="page_number" id="page">
+		    	<optgroup>
+				{% for page in pages%}
+				<option>{{ page }}</option>
+				{% endfor %}
+				</optgroup>
+			</select>
+		   
+		  </div>
+		 
+		  <button type="submit" class="btn btn-default">Submit</button>
+	</form> 
+<div class="row">
+	<table border="2" id="product">
+		<thead>
+			<tr>
+				{% for col in cols%}
+				<th>{{ col }}</th>
+				{% endfor%}
+			</tr>	
+		</thead>
+		<tbody>
+			{% for product in products%}
+			<tr>
+				{% for key, value in product.items%}
+				<td>{{ value }}</td>
+				
+				{% endfor%}
+			</tr>
+			{% endfor %}
+			
+		</tbody>
+			
+	</table>
+
+</div>
+
+
+
+  {% endblock %}

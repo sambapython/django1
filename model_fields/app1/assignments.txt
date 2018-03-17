@@ -1,0 +1,1 @@
+# how to add composit primarykey in django.
