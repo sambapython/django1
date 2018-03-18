@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+	{% load static%}
+<p>{{ msg }}</p>
+<img src="{% static 'imag/logo.jpeg'%}" width=200 height=200>
+<form method="post" enctype="multipart/form-data">
+	{% csrf_token%}
+	name: <input type="text" name="name"><br>
+	picture: <input type="file" name="profile"><br>
+	<input type="submit" name="" value="CREATE">
+	
+</form>
+</body>
+</html>

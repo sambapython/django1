@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+	<table border="2">
+		<tr>
+			<th>name</th>
+			<th> PROFILE PIC</th>
+		</tr>
+		{% for cust in data%}
+		<tr>
+			<td> {{ cust.name}}</td>
+			<td><img src="/media/{{ cust.profile_name}}" width="50" height="50"></td>
+		</tr>
+		{% endfor %}
+	</table>
+
+
+</body>
+</html>
