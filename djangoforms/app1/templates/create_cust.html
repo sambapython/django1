@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+	<p>{{ errors }}</p>
+	<p>{{ msg }}</p>
+	<form method="POST" enctype="multipart/form-data">
+		{% csrf_token%}
+		{{form.as_p}}
+		<!--{{ form2.as_p}} -->
+		<input type="submit" name="" value="create customer">
+	</form>
+
+</body>
+</html>
