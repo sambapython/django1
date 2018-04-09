@@ -1,0 +1,1 @@
+# show gold and silver instead of d anf g for customer list view
