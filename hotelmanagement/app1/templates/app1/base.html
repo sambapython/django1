@@ -14,20 +14,24 @@
 <nav class="navbar navbar-expand-sm bg-dark navbar-dark fixed-top">
   {% load static%}
   <img class="navbar-brand" src="{% static 'app1/images/logo.jpg' %}" 
-  alt="NO IMAGE" width="250px" height="80px">
+  alt="NO IMAGE" width="250px" height="50px">
   <ul class="navbar-nav">
     <li class="nav-item">
       <a class="nav-link" href="/rooms/">ROOMS</a>
     </li>
     <li class="nav-item">
-      <a class="nav-link" href="#">Customers</a>
+      <a class="nav-link" href="/customers/">Customers</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="/reports/">Reports</a>
     </li>
     
   </ul>
 </nav>
 
 <div class="container-fluid" style="margin-top:80px">
-  
+  {% block content%}
+  {% endblock %}
 </div>
 
 </body>

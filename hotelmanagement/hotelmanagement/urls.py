@@ -15,11 +15,17 @@ Including another URLconf
 """
 from django.conf.urls import url
 from django.contrib import admin
-from django.views.generic import TemplateView
-from app1.views import rooms
+from django.views.generic import TemplateView, CreateView 
+from app1.views import rooms, customers, reports_view, create_room
+from app1.models import Room
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
     url(r'^$', TemplateView.as_view(template_name="app1/home.html")),
-    url(r'^rooms/',rooms)
+    url(r'^rooms/',rooms),
+    url(r'^customers/',customers),
+    url(r'^reports/',reports_view),
+    url(r'^create_room/',create_room),
+    url(r'^create_room/',CreateView.as_view(model=Room,
+    	fields=['name','cost','noofbeds','type'])),
 ]
