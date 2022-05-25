@@ -135,7 +135,7 @@ pycurl==7.43.0
 pyflakes==1.6.0
 PyGithub==1.35
 Pygments==2.2.0
-PyJWT==1.5.3
+PyJWT==2.4.0
 pylint==1.7.4
 PyNaCl==1.2.1
 pyodbc==4.0.17
